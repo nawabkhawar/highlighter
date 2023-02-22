@@ -1,10 +1,14 @@
+//old
+
 //fetch ids of books
 //class id for every book title form main page a-row.kp-notebook-library-each-book
 var ids = new Array();
 $('.a-row.kp-notebook-library-each-book').each(function() {
 currentid= $(this).attr("id"); //Get elements that have an id=
   ids.push(currentid);console.log(currentid); //add id to array
-  fetch('https://read.amazon.com/notebook?asin='+ currentid + '&contentLimitState=&').then(function (response) {
+});
+latestId=ids[2];
+fetch('https://read.amazon.com/notebook?asin='+ latestId + '&contentLimitState=&').then(function (response) {
 	// The API call was successful!
 	return response.text();
 }).then(function (html) {
@@ -18,13 +22,16 @@ currentid= $(this).attr("id"); //Get elements that have an id=
 	  //id = doc.getElementsById("annotationNoteHeader")[0];
 	  //console.log(id);
 
+console.log("hi now we will parse html");
+console.log($(html).find("#annotationNoteHeader").text());
+console.log("lets parse highlights");
+console.log($(html).find("#highlight").text());
+
+
 
 }).catch(function (err) {
 	// There was an error
 	console.warn('Something went wrong.', err);
-});
-
-
 });
 
 //call amazon and get all highlights
