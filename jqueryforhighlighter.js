@@ -7,7 +7,7 @@ $('.a-row.kp-notebook-library-each-book').each(function() {
 currentid= $(this).attr("id"); //Get elements that have an id=
   ids.push(currentid);console.log(currentid); //add id to array
 });
-latestId=ids[2];
+latestId=ids[1];
 fetch('https://read.amazon.com/notebook?asin='+ latestId + '&contentLimitState=&').then(function (response) {
 	// The API call was successful!
 	return response.text();

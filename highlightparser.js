@@ -7,10 +7,10 @@ loadCharacters();
             try {
                //const res = await fetch('http://nawabkhawar.in:8080/nawab-clubs-1/nawabClubSearch/getAllClubsCached');
                 //data = await res.json();
-                const res = await fetch('./examplehighlights.html');
+                const res = await fetch('./booklong.html');
                 data = await res.html;
                 
-                fetch('./examplehighlights.html').then(function (response) {
+                fetch('./booklong.html').then(function (response) {
 	// The API call was successful!
 	return response.text();
 }).then(function (html) {
