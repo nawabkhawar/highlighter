@@ -7,17 +7,14 @@ $(document).ready(function(){
                 try {
                    //const res = await fetch('http://nawabkhawar.in:8080/nawab-clubs-1/nawabClubSearch/getAllClubsCached');
                     //data = await res.json();
-                    const res = await fetch('./booklong.html');
-                    data = await res.html;
+                    //const res = await fetch('./bookshort.html');
+                    //data = await res.html;
                     
-                    fetch('./booklong.html').then(function (response) {
+                    fetch('./bookshort.html').then(function (response) {
         // The API call was successful!
         return response.text();
     }).then(function (html) {
     
-        // Convert the HTML string into a document object
-        //var parser = new DOMParser();
-        //var doc = parser.parseFromString(html, 'text/html');
         console.log(html);
         //console.log(doc);
     
